@@ -291,7 +291,7 @@ func (s *ProjectsService) GetProject(pid interface{}, options ...OptionFunc) (*P
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s", url.QueryEscape(project))
+	u := fmt.Sprintf("%s", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("GET", u, nil, options)
 	if err != nil {
@@ -352,7 +352,7 @@ func (s *ProjectsService) GetProjectEvents(pid interface{}, opt *GetProjectEvent
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s/events", url.QueryEscape(project))
+	u := fmt.Sprintf("%s/events", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("GET", u, opt, options)
 	if err != nil {
@@ -457,7 +457,7 @@ func (s *ProjectsService) EditProject(pid interface{}, opt *EditProjectOptions, 
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s", url.QueryEscape(project))
+	u := fmt.Sprintf("%s", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("PUT", u, opt, options)
 	if err != nil {
@@ -482,7 +482,7 @@ func (s *ProjectsService) ForkProject(pid interface{}, options ...OptionFunc) (*
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s/fork", url.QueryEscape(project))
+	u := fmt.Sprintf("%s/fork", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("POST", u, nil, options)
 	if err != nil {
@@ -507,7 +507,7 @@ func (s *ProjectsService) StarProject(pid interface{}, options ...OptionFunc) (*
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s/star", url.QueryEscape(project))
+	u := fmt.Sprintf("%s/star", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("POST", u, nil, options)
 	if err != nil {
@@ -532,7 +532,7 @@ func (s *ProjectsService) UnstarProject(pid interface{}, options ...OptionFunc) 
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s/unstar", url.QueryEscape(project))
+	u := fmt.Sprintf("%s/unstar", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("POST", u, nil, options)
 	if err != nil {
@@ -558,7 +558,7 @@ func (s *ProjectsService) ArchiveProject(pid interface{}, options ...OptionFunc)
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s/archive", url.QueryEscape(project))
+	u := fmt.Sprintf("%s/archive", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("POST", u, nil, options)
 	if err != nil {
@@ -584,7 +584,7 @@ func (s *ProjectsService) UnarchiveProject(pid interface{}, options ...OptionFun
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s/unarchive", url.QueryEscape(project))
+	u := fmt.Sprintf("%s/unarchive", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("POST", u, nil, options)
 	if err != nil {
@@ -609,7 +609,7 @@ func (s *ProjectsService) DeleteProject(pid interface{}, options ...OptionFunc) 
 	if err != nil {
 		return nil, err
 	}
-	u := fmt.Sprintf("projects/%s", url.QueryEscape(project))
+	u := fmt.Sprintf("%s", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("DELETE", u, nil, options)
 	if err != nil {
@@ -636,7 +636,7 @@ func (s *ProjectsService) ShareProjectWithGroup(pid interface{}, opt *ShareWithG
 	if err != nil {
 		return nil, err
 	}
-	u := fmt.Sprintf("projects/%s/share", url.QueryEscape(project))
+	u := fmt.Sprintf("%s/share", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("POST", u, opt, options)
 	if err != nil {

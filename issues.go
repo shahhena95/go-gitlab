@@ -212,7 +212,7 @@ func (s *IssuesService) ListProjectIssues(pid interface{}, opt *ListProjectIssue
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s/issues", url.QueryEscape(project))
+	u := fmt.Sprintf("%s/issues", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("GET", u, opt, options)
 	if err != nil {
@@ -236,7 +236,7 @@ func (s *IssuesService) GetIssue(pid interface{}, issue int, options ...OptionFu
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s/issues/%d", url.QueryEscape(project), issue)
+	u := fmt.Sprintf("%s/issues/%d", url.QueryEscape(project), issue)
 
 	req, err := s.client.NewRequest("GET", u, nil, options)
 	if err != nil {
@@ -277,7 +277,7 @@ func (s *IssuesService) CreateIssue(pid interface{}, opt *CreateIssueOptions, op
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s/issues", url.QueryEscape(project))
+	u := fmt.Sprintf("%s/issues", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("POST", u, opt, options)
 	if err != nil {
@@ -318,7 +318,7 @@ func (s *IssuesService) UpdateIssue(pid interface{}, issue int, opt *UpdateIssue
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s/issues/%d", url.QueryEscape(project), issue)
+	u := fmt.Sprintf("%s/issues/%d", url.QueryEscape(project), issue)
 
 	req, err := s.client.NewRequest("PUT", u, opt, options)
 	if err != nil {
@@ -342,7 +342,7 @@ func (s *IssuesService) DeleteIssue(pid interface{}, issue int, options ...Optio
 	if err != nil {
 		return nil, err
 	}
-	u := fmt.Sprintf("projects/%s/issues/%d", url.QueryEscape(project), issue)
+	u := fmt.Sprintf("%s/issues/%d", url.QueryEscape(project), issue)
 
 	req, err := s.client.NewRequest("DELETE", u, nil, options)
 	if err != nil {

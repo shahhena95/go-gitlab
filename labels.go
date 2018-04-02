@@ -61,7 +61,7 @@ func (s *LabelsService) ListLabels(pid interface{}, opt *ListLabelsOptions, opti
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s/labels", url.QueryEscape(project))
+	u := fmt.Sprintf("%s/labels", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("GET", u, opt, options)
 	if err != nil {
@@ -95,7 +95,7 @@ func (s *LabelsService) CreateLabel(pid interface{}, opt *CreateLabelOptions, op
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s/labels", url.QueryEscape(project))
+	u := fmt.Sprintf("%s/labels", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("POST", u, opt, options)
 	if err != nil {
@@ -126,7 +126,7 @@ func (s *LabelsService) DeleteLabel(pid interface{}, opt *DeleteLabelOptions, op
 	if err != nil {
 		return nil, err
 	}
-	u := fmt.Sprintf("projects/%s/labels", url.QueryEscape(project))
+	u := fmt.Sprintf("%s/labels", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("DELETE", u, opt, options)
 	if err != nil {
@@ -155,7 +155,7 @@ func (s *LabelsService) UpdateLabel(pid interface{}, opt *UpdateLabelOptions, op
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s/labels", url.QueryEscape(project))
+	u := fmt.Sprintf("%s/labels", url.QueryEscape(project))
 
 	req, err := s.client.NewRequest("PUT", u, opt, options)
 	if err != nil {
@@ -186,7 +186,7 @@ func (s *LabelsService) SubscribeToLabel(pid interface{}, labelID interface{}, o
 	if err != nil {
 		return nil, nil, err
 	}
-	u := fmt.Sprintf("projects/%s/labels/%s/subscribe", url.QueryEscape(project), label)
+	u := fmt.Sprintf("%s/labels/%s/subscribe", url.QueryEscape(project), label)
 
 	req, err := s.client.NewRequest("POST", u, nil, options)
 	if err != nil {
@@ -217,7 +217,7 @@ func (s *LabelsService) UnsubscribeFromLabel(pid interface{}, labelID interface{
 	if err != nil {
 		return nil, err
 	}
-	u := fmt.Sprintf("projects/%s/labels/%s/unsubscribe", url.QueryEscape(project), label)
+	u := fmt.Sprintf("%s/labels/%s/unsubscribe", url.QueryEscape(project), label)
 
 	req, err := s.client.NewRequest("POST", u, nil, options)
 	if err != nil {
